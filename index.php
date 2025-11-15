@@ -27,13 +27,31 @@ $armario2 = new Armario([$gaveta3]);
 $escritorio = new Escritorio([$armario1, $armario2]);
 
 echo $gaveta1->listarItens();
+$gaveta1->removerItem("Grampeador");
+echo $gaveta1->listarItens();
+
+echo "<br>";
 
 echo $gaveta2->listarItens();
 
+echo "<br>";
+
 echo $gaveta3->listarItens();
 
-echo $armario1->listarGavetas();
+echo "<br>";
 
-echo str_repeat("-", 20);
+$armario1->listarGavetas();
 
-echo $escritorio->auditoria();
+echo "<br>";
+
+$armario2->listarGavetas();
+
+echo "<br>";
+
+$escritorio->listarArmarios();
+
+echo "<br>";
+
+$escritorio->auditoria();
+
+echo "<br>";

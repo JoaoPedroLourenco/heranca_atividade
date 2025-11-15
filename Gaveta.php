@@ -25,6 +25,7 @@ class Gaveta{
     public function removerItem($nome){
         foreach($this->itens as $indice => $item){
           if($item->getNome() === $nome){
+            echo "<strong> Item {$this->itens[$indice]} Retirado! </strong> <br>";
             unset($this->itens[$indice]);
           }
         }

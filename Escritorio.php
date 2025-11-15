@@ -23,20 +23,34 @@ class Escritorio{
     }
 
     public function listarArmarios(){
+      echo "<strong>Armário(s): </strong><br>";
        foreach($this->armarios as $armario){
-            echo $armario;
+            echo $armario . "<br>";
        } 
     }
 
     public function auditoria(){
-        foreach($this->armarios as $armario){
-            echo "{$armario} <br>";
-            foreach($armario->getGavetas() as $gaveta){
-              echo "{$gaveta}: <br>";
-                foreach($gaveta->getItens() as $item){
-                    echo "{$item} <br>";
-                }
+    echo "<ul>";
+
+    foreach($this->armarios as $armario){
+        echo "<li>";
+        echo "<p>{$armario}</p>";
+
+        echo "<ul>";
+        foreach($armario->getGavetas() as $gaveta){
+            echo "<li>";
+            echo "<p>{$gaveta}</p>";
+
+            echo "<ul>";
+            foreach($gaveta->getItens() as $item){
+                echo "<li>{$item}</li>";
             }
+            echo "</ul>";
+            echo "</li>";
         }
+        echo "</ul>";
+        echo "</li>";
     }
+    echo "</ul>";
+}
 }
